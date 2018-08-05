@@ -4,7 +4,7 @@
  *
  */
 
-import { DEFAULT_ACTION, REQUEST_BALANCE } from './constants';
+import { DEFAULT_ACTION, REQUEST_BALANCE, REQUEST_BALANCE_ERROR, REQUEST_BALANCE_SUCCESS } from './constants';
 
 export function defaultAction() {
   return {
@@ -15,5 +15,20 @@ export function defaultAction() {
 export function requestBalance() {
   return {
     type: REQUEST_BALANCE,
+  };
+}
+
+export function requestBalanceError(error) {
+  return {
+    type: REQUEST_BALANCE_ERROR,
+    error,
+  };
+}
+
+export function balanceLoaded(card, balance) {
+  return {
+    type: REQUEST_BALANCE_SUCCESS,
+    balance,
+    card,
   };
 }

@@ -18,5 +18,8 @@ const selectCardsDomain = state => state.get('cards', initialState);
 const makeSelectCards = () =>
   createSelector(selectCardsDomain, substate => substate.toJS());
 
+const makeSelectCard = cardId =>
+  createSelector(selectCardsDomain, substate => substate.get(cardId));
+
 export default makeSelectCards;
-export { selectCardsDomain };
+export { selectCardsDomain, makeSelectCard };

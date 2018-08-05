@@ -6,11 +6,11 @@ const realAPI =
   'https://valesmil2.azurewebsites.net/api/valesmil?code=1EcCTvok6a9XXKd6CjzoV2dziSIJgONKHQo5RTg105hnFPDTVTgT6g==';
 
 class BalanceService {
-  getBalance = ({ card, password }) =>
+  getBalance = ({ cardId, password }) =>
     axios
       .post(
         fakeAPI,
-        { card, password },
+        { cardId, password },
         { headers: { 'Content-Type': 'application/json' } },
       )
       .then(r => r.data)
