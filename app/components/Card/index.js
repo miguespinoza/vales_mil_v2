@@ -62,11 +62,9 @@ class Card extends React.Component {
         <CardBody>
           <FormattedMessage {...messages.balance} /> {this.props.balance} $
         </CardBody>
-        {
-          // <CardFooter>
-          // <BalanceChart>
-          // </CardFooter>
-        }
+        <CardFooter>
+          <BalanceChart/>
+        </CardFooter>
       </Base>
     );
   }
