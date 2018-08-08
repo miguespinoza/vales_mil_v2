@@ -14,8 +14,8 @@ import creditCard from './credit-card-gold.svg';
 import BalanceChart from 'components/BalanceChart';
 
 const Base = styled.div`
-  background-color: ${props => props.theme.cardBgColor};
-  color: ${props => props.theme.cardTextColor};
+  background-color: ${props => props.theme.bg};
+  color: ${props => props.theme.priText};
   margin: 20px;
   display: grid;
   grid-template-areas: 'head' 'body' 'foot';
@@ -63,7 +63,7 @@ class Card extends React.Component {
           <FormattedMessage {...messages.balance} /> {this.props.balance} $
         </CardBody>
         <CardFooter>
-          <BalanceChart/>
+          <BalanceChart />
         </CardFooter>
       </Base>
     );
