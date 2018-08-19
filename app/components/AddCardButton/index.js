@@ -16,9 +16,19 @@ const RoundedButton = styled.div`
   width: 70px;
   height: 70px;
 `;
+const AddIcon = styled.span`
+  position: relative;
+  top: 3px;
+  left: 21px;
+  font-size: 3em;
+`;
 class AddCardButton extends React.PureComponent {
   render() {
-    return <RoundedButton onClick={this.props.onClick}>+</RoundedButton>;
+    return (
+      <RoundedButton onClick={this.props.onClick}>
+        <AddIcon>+</AddIcon>
+      </RoundedButton>
+    );
   }
 }
 

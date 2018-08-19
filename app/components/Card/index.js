@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import BalanceChart from 'components/BalanceChart';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import creditCard from './credit-card-gold.svg';
@@ -18,8 +19,7 @@ const Base = styled.div`
   margin: 20px;
   display: grid;
   grid-template-areas: 'head' 'body' 'foot';
-  min-width: 275px;
-  max-width: 400px;
+  width: 100%;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 `;
@@ -61,7 +61,9 @@ class Card extends React.Component {
         <CardBody>
           <FormattedMessage {...messages.balance} /> {this.props.balance} $
         </CardBody>
-        <CardFooter />
+        <CardFooter>
+          <BalanceChart />
+        </CardFooter>
       </Base>
     );
   }

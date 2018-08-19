@@ -23,7 +23,6 @@ import lightTheme from './lightTheme';
 // import darkTheme from './darkTheme';
 const Body = styled.div`
   background-color: ${p => p.theme.bg};
-  height: 100vh;
 `;
 export default function App() {
   return (
