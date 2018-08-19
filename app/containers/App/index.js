@@ -14,8 +14,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Cards from 'containers/Cards';
 import { ThemeProvider } from 'styled-components';
 import lightTheme from './lightTheme';
 import darkTheme from './darkTheme';
@@ -25,7 +25,7 @@ export default function App() {
     <ThemeProvider theme={lightTheme}>
       <div>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={Cards} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

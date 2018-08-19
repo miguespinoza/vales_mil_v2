@@ -11,7 +11,6 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import creditCard from './credit-card-gold.svg';
-import BalanceChart from 'components/BalanceChart';
 
 const Base = styled.div`
   background-color: ${props => props.theme.bg};
@@ -62,9 +61,7 @@ class Card extends React.Component {
         <CardBody>
           <FormattedMessage {...messages.balance} /> {this.props.balance} $
         </CardBody>
-        <CardFooter>
-          <BalanceChart />
-        </CardFooter>
+        <CardFooter />
       </Base>
     );
   }
@@ -72,6 +69,7 @@ class Card extends React.Component {
 
 Card.propTypes = {
   cardName: PropTypes.string,
+  balance: PropTypes.number,
 };
 
 Card.defaultProps = {

@@ -9,7 +9,6 @@ import { Line } from 'react-chartjs-2';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [

@@ -7,23 +7,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+
+import Card from 'components/Card';
+import AddCardButton from 'components/AddCardButton';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectCards from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
-export class Cards extends React.Component {
+export class Cards extends React.PureComponent {
   render() {
     return (
       <div>
-        <FormattedMessage {...messages.header} />
+        <Card />
+        <AddCardButton />
       </div>
     );
   }
