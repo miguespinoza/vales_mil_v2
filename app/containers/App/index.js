@@ -16,19 +16,25 @@ import { Switch, Route } from 'react-router-dom';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Cards from 'containers/Cards';
-import { ThemeProvider } from 'styled-components';
-import lightTheme from './lightTheme';
-import darkTheme from './darkTheme';
+import NavBar from 'components/NavBar';
 
+import styled, { ThemeProvider } from 'styled-components';
+import lightTheme from './lightTheme';
+// import darkTheme from './darkTheme';
+const Body = styled.div`
+  background-color: ${p => p.theme.bg};
+  height: 100vh;
+`;
 export default function App() {
   return (
     <ThemeProvider theme={lightTheme}>
-      <div>
+      <Body>
+        <NavBar />
         <Switch>
           <Route exact path="/" component={Cards} />
           <Route component={NotFoundPage} />
         </Switch>
-      </div>
+      </Body>
     </ThemeProvider>
   );
 }

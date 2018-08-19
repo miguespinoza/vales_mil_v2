@@ -5,23 +5,19 @@
  */
 
 import { fromJS } from 'immutable';
-import { DEFAULT_ACTION, REQUEST_BALANCE, REQUEST_BALANCE_ERROR, REQUEST_BALANCE_SUCCESS, REGISTER_CARD } from './constants';
+import { reducer } from 'utils/redux';
+import { REQUEST_BALANCE_SUCCESS, REGISTER_CARD } from './constants';
 
 export const initialState = fromJS({});
 
-function cardsReducer(state = initialState, action) {
-  switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
-    case REGISTER_CARD:
-      const card = action.card;
-      return state.add(card.id,fromJS(card));
-    case REQUEST_BALANCE_SUCCESS:
-      const {card, balance} = action;
-      return state.update(card.id, card => card.set('balance',balance));
-    default:
-      return state;
-  }
-}
+const cardsReducer = reducer(
+  {
+    [REGISTER_CARD]: (state, action) =>
+      state.add(action.card.id, fromJS(action.card)),
+    [REQUEST_BALANCE_SUCCESS]: (state, action) =>
+      state.update(action.card.id, card => card.set('balance', action.balance)),
+  },
+  initialState,
+);
 
 export default cardsReducer;
