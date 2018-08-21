@@ -17,6 +17,7 @@ const Base = styled.div`
   background-color: ${props => props.theme.bg};
   color: ${props => props.theme.priText};
   margin: 20px;
+  max-width: 400px;
   display: grid;
   grid-template-areas: 'head' 'body' 'foot';
   width: 100%;

@@ -22,6 +22,7 @@ import saga from './saga';
 const CardsContainers = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 `;
 const AddContainer = styled.div`
   position: fixed;

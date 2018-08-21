@@ -15,12 +15,12 @@ const RoundedButton = styled.div`
   background-color: ${props => props.theme.secondary};
   width: ${props => (props.active ? '300px' : '70px')};
   height: ${props => (props.active ? '300px' : '70px')};
-  transition: width 0.5s, height 0.5s, border-radius 0.5s;
+  transition: width 0.25s, height 0.25s, border-radius 0.3s;
 `;
 const AddIcon = styled.span`
   position: relative;
   top: 3px;
-  left: 21px;
+  right: -21px;
   font-size: 3em;
 `;
 const FormLabel = styled.span`
@@ -77,7 +77,7 @@ class AddCardButton extends React.PureComponent {
     return (
       <RoundedButton active={this.state.active} onClick={this.toggle}>
         <AddIcon onClick={() => this.setState({ active: !this.state.active })}>
-          +
+          {this.state.active ? '-' : '+'}
         </AddIcon>
         {this.state.active && (
           <FormContainer>
